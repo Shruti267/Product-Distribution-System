@@ -1,0 +1,9 @@
+<div class="header theme-color">
+  <div class="title" (click)="openTab('order')" [ngClass]="{highlight: currentTab === 'order'}">Orders</div>
+  <div class="title" (click)="openTab('transportation')" [ngClass]="{highlight: currentTab === 'transportation'}">Transportation</div>
+  <div class="title" (click)="openTab('payment')" [ngClass]="{highlight: currentTab === 'payment'}">Payment</div>
+  <div class="title" (click)="openTab('report')" [ngClass]="{highlight: currentTab === 'report'}">Report</div>
+  <div class="title" (click)="openTab('add-data')" [ngClass]="{highlight: currentTab === 'add-data'}">Add data</div>
+</div>
+
+<router-outlet></router-outlet>

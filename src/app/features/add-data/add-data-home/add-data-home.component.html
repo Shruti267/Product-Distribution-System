@@ -1,0 +1,14 @@
+<div class="add-data-container">
+    <mat-form-field appearance="fill">
+        <mat-label>Select an option</mat-label>
+        <mat-select disableRipple [(ngModel)]="selectedValue">
+            <mat-option value="Client">Client</mat-option>
+            <mat-option value="City">City</mat-option>
+            <mat-option value="Mill">Mill</mat-option>
+            <mat-option value="Product">Product</mat-option>
+            <mat-option value="Brand">Brand</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div class="button-container"><button [disabled]="!selectedValue" class="common-button" [ngClass]="{'disabled-button': !selectedValue}" (click)="selctCategory()">Submit</button></div>
+</div>

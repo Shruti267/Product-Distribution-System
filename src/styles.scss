@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0px;
+    background-color: rgb(213, 231, 228);
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.common-button {
+    padding: 10px;
+    background-color:  rgb(46, 158, 143);
+    color: white;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.disabled-button {
+    background-color:  rgb(46, 48, 47);
+    cursor: not-allowed;
+}
+
+.theme-color {
+    background-color:  rgb(46, 158, 143);
+}

@@ -1,0 +1,24 @@
+.header {
+  width: 100%;
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  -webkit-user-select: none;
+  /* Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+/Edge */
+  user-select: none;
+}
+
+.title {
+   padding: 1%;
+   font-weight: 500;
+   color: white;
+}
+
+.highlight {
+    background-color: black;
+}

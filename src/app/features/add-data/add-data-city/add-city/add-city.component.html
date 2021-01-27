@@ -1,0 +1,6 @@
+<div class="form-group">
+    <label  class="form-label">City</label>
+    <input type="text" class="form-control" required [(ngModel)]="city" name="city" (ngModelChange)="valuechange($event)">
+</div>
+
+<div class="button-container"><button [disabled]="!isValid" class="common-button" [ngClass]="{'disabled-button': !isValid}" (click)="Submit()">Submit</button></div>

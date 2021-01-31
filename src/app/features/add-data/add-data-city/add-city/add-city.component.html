@@ -1,6 +1,14 @@
-<div class="form-group">
-    <label  class="form-label">City</label>
-    <input type="text" class="form-control" required [(ngModel)]="city" name="city" (ngModelChange)="valuechange($event)">
-</div>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" class="form-container">
 
-<div class="button-container"><button [disabled]="!isValid" class="common-button" [ngClass]="{'disabled-button': !isValid}" (click)="Submit()">Submit</button></div>
+    <div class="form-field">
+        <label for="name">
+          City Name: 
+        </label>
+        <input id="name" type="text" required minlength="1" formControlName="name">
+    </div>
+
+    <button [disabled]="!checkoutForm.valid" class="common-button form-button" [ngClass]="{'disabled-button': !checkoutForm.valid}" type="submit">Submit</button>
+
+    <button type="reset" class="common-button" (click)="cancel()">Cancel</button>
+  
+</form>

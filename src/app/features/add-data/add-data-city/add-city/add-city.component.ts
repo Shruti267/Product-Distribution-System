@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { Location } from '@angular/common'
+import { HttpService } from 'src/app/services/http.service';
+import { environment } from 'src/environments/environment';
+import { AppConstants } from 'src/app/core/app-constants';
 
 @Component({
   selector: 'app-add-city',
@@ -7,19 +12,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCityComponent implements OnInit {
   city: String;
-  isValid: Boolean = false;
+  checkoutForm = this.formBuilder.group({
+    name: ''
+  });
 
-  constructor() { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private location: Location,
+    private httpService: HttpService
+  ) { }
 
   ngOnInit(): void {
   }
 
-  Submit() {
-
+  onSubmit(): void {
+    // Process checkout data here
+    let data = {
+      "cityName": this.checkoutForm.value.name
+    }
+    this.httpService.post(environment.baseURL + AppConstants.cities, data).subscribe( res => {
+    });
+    console.warn('Your order has been submitted', this.checkoutForm.value);
+    this.location.back();
   }
 
-  valuechange(event: any) {
-    event ? this.isValid = true : this.isValid = false;
+  cancel() {
+    this.location.back();
   }
 
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AppConstants } from 'src/app/core/app-constants';
+import { HttpService } from 'src/app/services/http.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-add-data-city',
@@ -7,17 +10,18 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./add-data-city.component.scss']
 })
 export class AddDataCityComponent implements OnInit {
-  addNew: Boolean = false;
   constructor (
-    private router: Router, 
-    private route: ActivatedRoute
+    public router: Router, 
+    public route: ActivatedRoute,
+    private httpService: HttpService
   ) { }
 
   ngOnInit(): void {
+    this.httpService.get(environment.baseURL + AppConstants.cities).subscribe( res => {
+    });
   }
 
   addCity() {
-    this.addNew = true;
     this.router.navigate(['new'], {relativeTo: this.route});
   }
 

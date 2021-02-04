@@ -20,6 +20,9 @@ import { AddDataBrandComponent } from './features/add-data/add-data-brand/add-da
 import { AddClientComponent } from './features/add-data/add-data-client/add-client/add-client.component';
 import { AddCityComponent } from './features/add-data/add-data-city/add-city/add-city.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input'
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

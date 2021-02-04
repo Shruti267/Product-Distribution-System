@@ -3,7 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { Location } from '@angular/common'
 import { HttpService } from 'src/app/services/http.service';
 import { environment } from 'src/environments/environment';
-import { AppConstants } from 'src/app/core/app-constants';
+import { AppConstants } from 'src/app/core/constants/app-constants';
 
 @Component({
   selector: 'app-add-city',

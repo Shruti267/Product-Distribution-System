@@ -1,4 +1,28 @@
 <div class="add-category-container">
     <div class="button-container" *ngIf="!router.url.includes('/new')"><button class="common-button" (click)="addCity()">Add new city</button></div>
 </div>
+
+<div class="filter-container" *ngIf="!router.url.includes('/new')">
+    <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
+</div>
+
+<div class="table-container" *ngIf="!router.url.includes('/new')">
+    <table *ngIf="cities" mat-table [dataSource]="cities" class="mat-elevation-z8">
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef> S. No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.cityID}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="city">
+          <th mat-header-cell *matHeaderCellDef> City </th>
+          <td mat-cell *matCellDef="let element"> {{element.cityName}} </td>
+        </ng-container>
+        
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr  class="element-row"  mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
 <router-outlet></router-outlet>

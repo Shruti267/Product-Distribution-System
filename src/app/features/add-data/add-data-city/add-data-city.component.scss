@@ -3,3 +3,32 @@
     margin-right: 10%;
     text-align: end
 }
+
+table {
+    width: 50%;
+}
+
+.table-container {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+tr.element-row:not(.example-expanded-row):hover {
+    background: whitesmoke;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+th.mat-header-cell {
+    text-align: center;
+}
+
+.filter-container {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
